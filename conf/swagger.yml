@@ -1,0 +1,9 @@
+---
+swagger: "2.0"
+info:
+  title: "News API"
+  description: "News service API"
+consumes:
+  - application/json
+produces:
+  - application/json
