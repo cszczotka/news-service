@@ -10,7 +10,7 @@ GET     /last-events/:n                 controllers.EventController.getNLastEven
 GET     /new/:id                        controllers.EventController.getEventById(id: String)
 POST    /login                          controllers.LoginController.login(user: String, password: String)
 POST     /create                        controllers.EventController.createEvent(title: String, author: String, content: String, description: String, eventImage: String)
-PUT      /update                        controllers.EventController.updateEvent(id: String, title: String, author: String, content: String, description: String, eventImage: String)
+PUT      /update                        controllers.EventController.updateEvent(id: String, title: Option[String], author: Option[String], content: Option[String], description: Option[String], eventImage: Option[String])
 DELETE   /delete/:id                    controllers.EventController.deleteEvent(id: String)
 ### NoDocs ###
 GET   /docs/swagger-ui/*file            controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)

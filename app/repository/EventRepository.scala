@@ -54,12 +54,26 @@ class EventRepository @Inject()(db: Database, dec: DatabaseExecutionContext) {
     }
   }
 
-  def insertNewEvent(event: Event): Unit = db.withTransaction { implicit c =>
+  def insertEvent(event: Event): Unit = db.withTransaction { implicit c =>
     val insertSql = SQL"""
         insert into event (id, title, author, description, eventImage, content, publishedAt)
         values (${event.id}, ${event.title}, ${event.author}, ${event.description}, ${event.eventImage},
         ${event.content},${event.publishedAt})
     """
     insertSql.executeInsert()
+  }
+
+  def deleteEvent(id: String) : Unit = db.withTransaction { implicit  c =>
+    var deleteSql = SQL"""
+      delete from event where id = ${id}
+    """
+    deleteSql.execute()
+  }
+
+  def updateEvent(id: String, author: Option[String] ): Unit = db.withTransaction { implicit c =>
+      val insertSql = SQL"""
+        update event set author = ${author.get} where id = ${id}
+      """
+      insertSql.executeUpdate()
   }
 }
