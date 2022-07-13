@@ -11,7 +11,10 @@ object  Event {
         "id" -> event.id,
         "title" -> event.title,
         "author" -> event.author,
-        "publishedAt" -> event.publishedAt
+        "publishedAt" -> event.publishedAt,
+        "description" -> event.description,
+        "eventImage" -> event.eventImage,
+        "content" -> event.content
       )
     }
   }

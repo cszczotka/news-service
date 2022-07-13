@@ -8,6 +8,7 @@ scalaVersion := "2.13.8"
 
 libraryDependencies += guice
 libraryDependencies ++= Seq(
+  evolutions,
   jdbc,
   "com.h2database" % "h2" % "1.4.199",
   "org.playframework.anorm" %% "anorm" % "2.6.10"
