@@ -4,13 +4,15 @@
 # ~~~~
 
 # An example controller showing a sample home page
-#GET     /                           controllers.HomeController.index()
+#GET     /                              controllers.HomeController.index()
 
-GET     /last-news/:n               controllers.NewsController.getNLastNews(n: Int)
-GET     /new/:id                    controllers.NewsController.getNewById(id: String)
-POST    /login                      controllers.LoginController.login(user: String, password: String)
-GET     /create                     controllers.NewsController.createNews(title: String, author: String, content: String, description: String, eventImage: String)
+GET     /last-events/:n                 controllers.EventController.getNLastEvents(n: Int)
+GET     /new/:id                        controllers.EventController.getEventById(id: String)
+POST    /login                          controllers.LoginController.login(user: String, password: String)
+POST     /create                        controllers.EventController.createEvent(title: String, author: String, content: String, description: String, eventImage: String)
+PUT      /update                        controllers.EventController.updateEvent(id: String, title: String, author: String, content: String, description: String, eventImage: String)
+DELETE   /delete/:id                    controllers.EventController.deleteEvent(id: String)
 ### NoDocs ###
-GET   /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+GET   /docs/swagger-ui/*file            controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
 ### NoDocs ###
-GET   /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+GET   /assets/*file                     controllers.Assets.versioned(path="/public", file: Asset)

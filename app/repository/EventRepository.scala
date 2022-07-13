@@ -11,7 +11,7 @@ import anorm.SqlParser.get
 import scala.language.postfixOps
 
 @Singleton
-class NewsRepository @Inject() (db: Database, dec: DatabaseExecutionContext) {
+class EventRepository @Inject()(db: Database, dec: DatabaseExecutionContext) {
 
   val rowParser: anorm.RowParser[Event] = {
       get[String]("id") ~
